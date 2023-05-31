@@ -58,7 +58,16 @@
 
       function removeTodolist(): void
       {
+        echo "MENGHAPUS TODO" . PHP_EOL;
+        $pilihan = InputHelper::input("Nomor (x untuk batalkan)");
 
+        if($pilihan == "x")
+        {
+          echo "Batalkan menghapus todo" . PHP_EOL;
+        }else
+        {
+          $this->todolistService->removeTodolist($pilihan);
+        }
       }
     }
   }
